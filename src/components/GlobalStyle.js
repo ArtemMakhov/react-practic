@@ -1,15 +1,7 @@
-@import-normalize; /* bring in normalize.css styles */
+import { createGlobalStyle } from 'styled-components';
+import 'modern-normalize';
 
-/* :root {
-  --color-white: #ffffff;
-  --color-black: #010101;
-  --color-green: #4caf50;
-  --color-red: #f44336;
-  --color-blue: #2196f3;
-  --color-primary-text: #212121;
-  --color-secondary-text: #757575;
-} */
-
+export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,8 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+`;
