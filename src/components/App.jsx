@@ -1,15 +1,10 @@
-import { Component } from "react";
-import { GlobalStyle } from "./GlobalStyle";
-import { Box } from "./Box";
-import { MaterialEditorForm } from "./MaterialEditorForm/MaterialEditorForm";
+import { UserMenu } from "path/UserMenu";
 
-export class App extends Component {
-    render() {
-        return (
-            <Box>
-                <MaterialEditorForm/>
-                <GlobalStyle />
-            </Box>
-        );
-    }
-}
+export const App = () => {
+    return (
+        <div>
+            <UserMenu />
+        </div>
+    );
+};
+
