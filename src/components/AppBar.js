@@ -5,8 +5,8 @@ import {
     BsChatLeftTextFill,
     BsPersonLinesFill,
 } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import { Box } from './Box';
+import { NavItem } from './AppBar.styled';
 
 const navItems = [
     { href: 'dashboard', text: 'Dashboard', icon: BsStack },
@@ -21,10 +21,10 @@ export const AppBar = () => {
         <Box as="header" p={4} height="100vh" borderRight="1px solid black">
             <Box as="nav" display="flex" flexDirection="column">
                 {navItems.map(({ href, text, icon:Icon }) => (
-                    <Link to={href} key={href}>
+                    <NavItem to={href} key={href}>
                         <Icon size="16px"/>
                         {text}
-                    </Link>
+                    </NavItem>
                 ))}
             </Box>
         </Box>

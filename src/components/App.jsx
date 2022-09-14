@@ -11,7 +11,11 @@ export const App = () => {
         <>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    
+                    <Route path="dashboard" element={<div>Dashboard</div>} />
+                    <Route path="sales" element={<div>Sales</div>} />
+                    <Route path="reports" element={<div>Reports</div>} />
+                    <Route path="feedback" element={<div>Feedback</div>} />
+                    <Route path="customers" element={<div>Customers</div>}/>
                 </Route>
             </Routes>
             <GlobalStyle />

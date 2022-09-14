@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { AppBar } from "./AppBar";
 import { Box } from "./Box";
 
@@ -7,7 +8,8 @@ export const Layout = () => {
         display='grid'
         gridTemplateColumns='200px 1fr'
         >
-            <AppBar/>
+            <AppBar />
+            <Outlet/>
         </Box>
     );
 };
