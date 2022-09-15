@@ -5,7 +5,7 @@ export const NavItem = styled(NavLink)`
 display: flex;
 align-items: center;
 gap: ${p => p.theme.space[3]}px;
-padding: ${ p => p.theme.space[3]}px;
+padding: ${p => p.theme.space[3]}px;
 border-radius: 4px;
 text-decoration: nane;
 color: ${p => p.theme.colors.text};
@@ -19,4 +19,4 @@ color: ${p => p.theme.colors.text};
 :focus-visible:not(.active){
     color: ${p => p.theme.colors.primary};
 }
-`
+`;

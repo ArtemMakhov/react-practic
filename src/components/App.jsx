@@ -5,6 +5,7 @@ import { GlobalStyle } from "./GlobalStyle";
 
 
 import { Layout } from './Layout';
+import { Sales } from "pages/Sales/Sales";
 
 export const App = () => {
     return (
@@ -12,7 +13,11 @@ export const App = () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="dashboard" element={<div>Dashboard</div>} />
-                    <Route path="sales" element={<div>Sales</div>} />
+                    <Route path="sales" element={<div><Sales /></div>}>
+                        <Route path="analytics" element={<div>Analytics</div>}/>
+                        <Route path="invoices" element={<div>Invoices</div>}/>
+                        <Route path="deposits" element={<div>Deposits</div>}/>
+                    </Route>
                     <Route path="reports" element={<div>Reports</div>} />
                     <Route path="feedback" element={<div>Feedback</div>} />
                     <Route path="customers" element={<div>Customers</div>}/>
