@@ -1,10 +1,11 @@
 import { getCustomers } from "components/fakeApi";
 import { useMemo } from "react";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { SearchBox } from "../../components/SearchBox";
 
-export const Customers = () => {
+ const Customers = () => {
+    const lacation =  useLocation();
     const [customers, setCustomers] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const filterParam = searchParams.get('filter') ?? "";
@@ -28,9 +29,13 @@ export const Customers = () => {
         {visibleCustomers.length > 0 && (
             <ul>
                 {visibleCustomers.map(customer => (
-                    <li key={customer.id}>{customer.name}</li>
+                    <li key={customer.id}>
+                        <Link to={`${customer.id }`} state={{from: lacation}}>{customer.name}</Link>
+                    </li>
                 ))}
             </ul>
         )}
     </main>;
 };
+
+export default Customers;

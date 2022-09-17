@@ -4,7 +4,7 @@ import { NavItem } from './Invoices.styled';
 import { Box } from "./Box";
 import { getInvoices } from "./fakeApi";
 
-export const Invoices = () => {
+ const Invoices = () => {
     const [invoices, setInvoices] = useState([]);
 
     useEffect(() => {
@@ -26,3 +26,4 @@ export const Invoices = () => {
         </Box>
     )
 }
+export default Invoices;

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { AppBar } from "./AppBar";
 import { Box } from "./Box";
@@ -9,7 +10,9 @@ export const Layout = () => {
         gridTemplateColumns='200px 1fr'
         >
             <AppBar />
-            <Outlet/>
+            <Suspense fullback={null}>
+                <Outlet/>
+            </Suspense>
         </Box>
     );
 };

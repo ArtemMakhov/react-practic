@@ -1,14 +1,19 @@
+import { lazy } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route,Routes, Navigate } from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle";
 
-
-
 import { Layout } from './Layout';
-import { Sales } from "pages/Sales/Sales";
-import { Invoices } from "./Invoices";
+// import { Sales } from "pages/Sales/Sales";
+// import  Invoices  from "./Invoices";
 import { InvoiceDetails } from "./InvoiceDetails"; 
-import { Customers } from "../pages/Customers/Customers";
+// import  Customers  from "../pages/Customers/Customers";
+import CustomerDetails  from "../pages/Customers/CustomersDetails";
+
+const Sales = lazy(() => import('../pages/Sales/Sales'))
+const Customers = lazy(() => import('../pages/Customers/Customers'))
+const Invoices = lazy(() => import('./Invoices'))
+
 
 export const App = () => {
     return (
@@ -28,7 +33,8 @@ export const App = () => {
                     </Route>
                     <Route path="reports" element={<div>Reports</div>} />
                     <Route path="feedback" element={<div>Feedback</div>} />
-                    <Route path="customers" element={<Customers/>}/>
+                    <Route path="customers" element={<Customers />} />
+                    <Route path="customers/:customerId" element={<CustomerDetails/>} />
                 </Route>
             </Routes>
             <GlobalStyle />
